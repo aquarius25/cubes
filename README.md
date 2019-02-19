@@ -1,4 +1,4 @@
-portfolio DB設計
+cubes DB設計
 ---
 ## user_group-table
 |Column|Type|Options|
