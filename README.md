@@ -3,8 +3,8 @@ cubes DB設計
 ## user_group-table
 |Column|Type|Options|
 |------|----|-------|
-|user_id|string|null: false|
-|group_id|string|null: false|
+|user_id|integer|null: false|
+|group_id|integer|null: false|
 
 ### Asociation
 - belongs_to :group
