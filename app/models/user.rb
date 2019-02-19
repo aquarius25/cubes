@@ -3,4 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_many :groups, though: :user_groups
+  has_many :user_groups
+  has_many :tweets
+  has_many :messages
+  has_many :articles
 end
