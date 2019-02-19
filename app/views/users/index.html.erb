@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <header>
+    <div class="header-top">
+      <div class="header-top__left">
+        <p class="title">User</p>
+      </div>
+      <div class="header-top__right">
+      </div>
+    </div>
+    <div class="header-bottom">
+      <%= link_to users_path do %>
+        <i class="fas fa-user-alt icon color"></i>
+      <% end %>
+      <%= link_to tweets_path do %>
+        <i class="far fa-comment-dots icon"></i>
+      <% end %>
+      <%= link_to groups_path do %>
+        <i class="far fa-object-group icon"></i>
+      <% end  %>
+      <%= link_to articles_path do %>
+        <i class="far fa-sticky-note icon"></i>
+      <% end %>
+    </div>
+  </header>
+  <main>
+    <div class="main-contents">
+      <div class="left-contents">aquaqua</div>
+      <div class="right-contents scroll-container"></div>
+    </div>
+  </main>
+</div>
