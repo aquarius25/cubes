@@ -1,0 +1,15 @@
+<div class="left-contents">
+  <div class="profile">
+    <div class="profile-image">
+      <%= image_tag "https://omotesando-info.com/webmagazine/wp-content/uploads/12-3.jpg", class: "user-image" %>
+    </div>
+    <div class="profile-name">
+      <p>LoginName:</p>
+      <p><%= current_user.nickname %></p>
+      <i class="fab fa-github"></i>
+        <%= link_to "Github", destroy_user_session_path, method: :delete %></br>
+      <i class="fas fa-sign-out-alt"></i>
+        <%= link_to "LogOut", destroy_user_session_path, method: :delete %>
+    </div>
+  </div>
+</div>
