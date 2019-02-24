@@ -25,7 +25,7 @@
   <main>
     <div class="main-contents">
       <%= render partial: "/shared/left_contents" %>
-      <div class="right-contents scroll-container">
+      <div class="right-contents scroll-container tweet-size">
         <div class="tweet-contents">
           <% @tweets.each do |tweet| %>
             <%= render partial: "tweet_contents", locals: { tweet: tweet } %>

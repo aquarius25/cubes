@@ -62,7 +62,7 @@ main {
   background-color: #516C8D;
 }
 .right-contents {
-  height: 100%;
+  min-height: 100%;
   width: calc(100% - 300px);
   float: right;
   background-color: #ccc;
