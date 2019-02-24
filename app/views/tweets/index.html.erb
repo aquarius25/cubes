@@ -32,13 +32,21 @@
           <% end %>
         </div>
         <div class="tweet-form">
-          <%= form_tag("/tweets", method: :post) do %>
-            <%= label_tag("Text:") %>
-            <%= text_field_tag :text %>
-            <%= label_tag("ImageUrl:") %>
-            <%= text_field_tag :image %>
-            <%= submit_tag("Sent") %>
-          <% end %>
+          <div class="tweet-form__inner">
+            <%= form_tag("/tweets", method: :post) do %>
+              <input class="form-input" placeholder="text" name="text" cols="30" rows="1" autofocus="true">
+              <i class="fas fa-pen-nib form-icon "></i>
+              <input class="form-input" placeholder="Image URL" type="text" name="image">
+              <i class="fas fa-image form-icon"></i>
+              <input class="form-submit" type="submit" value="SENT">
+              <!-- <label>
+                <span class="filelabel" title="ファイルを選択">
+                  <img src="" width="32" height="26" alt="＋画像">
+                </span>
+                <input type="file" name="datafile" id="filesend">
+              </label> -->
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
