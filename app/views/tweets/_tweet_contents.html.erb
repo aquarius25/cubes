@@ -1,0 +1,11 @@
+<% if current_user.id == tweet.user_id %>
+  <div class="tweet_contents__tweet right-side">
+    <%= simple_format(tweet.user.nickname) %>
+    <%= simple_format(tweet.text) %>
+  </div>
+<% else %>
+  <div class="tweet_contents__tweet left-side">
+    <%= simple_format(tweet.user.nickname) %>
+    <%= simple_format(tweet.text) %>
+  </div>
+<% end %>
