@@ -25,7 +25,20 @@
   <main>
     <div class="main-contents">
       <%= render partial: "/shared/left_contents" %>
-      <div class="right-contents scroll-container"></div>
+      <div class="right-contents scroll-container">
+        <div class="tweet-contents">
+          <% @tweets.each do |tweet| %>
+            <%= render partial: "tweet_contents", locals: { tweet: tweet } %>
+          <% end %>
+        </div>
+        <div class="tweet-form">
+          <%= form_tag("/tweets", method: :post) do %>
+            <input placeholder="Image URL" type="text" name="image" autofocus="true">
+            <textarea placeholder="text" name="text" cols="30" rows="1"></textarea>
+            <input type="submit" value="SENT">
+          <% end %>
+        </div>
+      </div>
     </div>
   </main>
 </div>
