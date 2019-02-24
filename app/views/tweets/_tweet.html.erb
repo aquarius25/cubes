@@ -2,6 +2,6 @@
   <%= simple_format(tweet.user.nickname, class:"user-nickname") %>
   <%= simple_format(tweet.text, class: "tweet-text") %>
   <% if tweet.image.present? %>
-    <%= image_tag (tweet.image, class: "tweet-image") %>
+    <%= image_tag (tweet.image) %>
   <% end %>
 </div>
