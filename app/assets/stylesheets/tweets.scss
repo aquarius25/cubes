@@ -7,7 +7,15 @@
     margin: 10px;
     display: block;
     border-radius: 10px;
-    background-color: green;
+    background-color: #5DA797;
+    &--params {
+      margin: 10px;
+    }
+    &--params img {
+      height: 100px;
+      width: 100px;
+      border-radius: 10px;
+    }
   }
 }
 .right-side {
@@ -17,6 +25,10 @@
   float: left;
 }
 
+
+
+
+//tweet 部分右下
 .tweet-size {
   margin-bottom: 80px;
 }

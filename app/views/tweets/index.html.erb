@@ -33,9 +33,11 @@
         </div>
         <div class="tweet-form">
           <%= form_tag("/tweets", method: :post) do %>
-            <input placeholder="Image URL" type="text" name="image" autofocus="true">
-            <textarea placeholder="text" name="text" cols="30" rows="1"></textarea>
-            <input type="submit" value="SENT">
+            <%= label_tag("Text:") %>
+            <%= text_field_tag :text %>
+            <%= label_tag("ImageUrl:") %>
+            <%= text_field_tag :image %>
+            <%= submit_tag("Sent") %>
           <% end %>
         </div>
       </div>
