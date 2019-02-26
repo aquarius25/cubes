@@ -66,4 +66,8 @@ gem 'sprockets', '3.7.2'
 gem 'devise'
 gem "carrierwave"
 gem "rmagick", "~> 2.16"
-gem "unicorn"
+
+
+group :production do
+  gem 'unicorn'
+end
