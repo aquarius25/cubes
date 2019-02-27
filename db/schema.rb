@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_02_20_121239) do
     t.string "name", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["name"], name: "index_groups_on_name"
   end
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

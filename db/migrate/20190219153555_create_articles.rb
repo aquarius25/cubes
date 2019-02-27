@@ -4,7 +4,7 @@ class CreateArticles < ActiveRecord::Migration[5.2]
       t.string :name, null: false
       t.text :text,	null: false
       t.string	:image, null: true
-      t.integer :user_id,	null: false
+      t.integer :user_id,	null: false, foreign_key: true
       t.timestamps null: true
     end
   end
