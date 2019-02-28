@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :articles
   resources :tweets
-  resources :groups do
-    resources :messages
+  resources :groups, only: [:index, :new, :create, :edit, :update] do
+    resources :messages, only: [:index, :create]
   end
 end

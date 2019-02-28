@@ -5,6 +5,7 @@
         <p class="title">Group</p>
       </div>
       <div class="header-top__right">
+        <%= link_to "new", new_group_path %>
       </div>
     </div>
     <div class="header-bottom">
@@ -25,7 +26,11 @@
   <main>
     <div class="main-contents">
       <%= render partial: "/shared/left_contents" %>
-      <div class="right-contents scroll-container">kuma</div>
+      <div class="right-contents scroll-container">
+        <% current_user.groups.each do |group| %>
+          <%= group.name %>
+        <% end %>
+      </div>
     </div>
   </main>
 </div>
