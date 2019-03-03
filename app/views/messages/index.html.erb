@@ -5,6 +5,7 @@
         <p class="title">Message</p>
       </div>
       <div class="header-top__right">
+        <%= link_to "Back To Group-Top", groups_path %>
       </div>
     </div>
     <div class="header-bottom">
@@ -16,7 +17,7 @@
       <% end %>
       <%= link_to groups_path do %>
         <i class="far fa-object-group icon color"></i>
-      <% end  %>
+      <% end %>
       <%= link_to articles_path do %>
         <i class="far fa-sticky-note icon"></i>
       <% end %>

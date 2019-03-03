@@ -10,10 +10,10 @@ class Group < ApplicationRecord
       if last_message.text?
         last_message.text
       else
-        "画像が投稿されています。"
+        "Have a image."
       end
     else
-      "まだメッセージがありません。"
+      "No message yet."
     end
   end
 end
