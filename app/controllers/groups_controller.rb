@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :user_signed_in
   before_action :set_group, only: [:edit, :update]
 
   def index
@@ -10,9 +11,8 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @user = current_user
-    @group = @user.groups.new(group_params)
-    if @user.save
+    @group = current_user.groups.new(group_params)
+    if @group.save
       redirect_to root_path, notice: "グループを作成しました。"
     else
       render :new
@@ -34,6 +34,10 @@ class GroupsController < ApplicationController
 
   def set_group
     @group = Group.find(params[:id])
+  end
+
+  def user_signed_in
+    redirect_to new_user_session_path unless user_signed_in?
   end
 
 end

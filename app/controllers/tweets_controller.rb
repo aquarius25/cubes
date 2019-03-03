@@ -1,6 +1,7 @@
 class TweetsController < ApplicationController
 
   def index
+    @tweet = Tweet.new
     @tweets = Tweet.includes(:user).order("created_at ASC")
   end
 
@@ -8,7 +9,8 @@ class TweetsController < ApplicationController
   end
 
   def create
-    Tweet.create(image: tweet_params[:image],text: tweet_params[:text], user_id: current_user.id)
+    @tweet = Tweet.new(tweet_params)
+      @tweet.save
     redirect_to index: :action
   end
 

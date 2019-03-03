@@ -5,7 +5,7 @@
         <p class="title">Group</p>
       </div>
       <div class="header-top__right">
-        <%= link_to "new&edit", new_group_path %>
+        <%= link_to "new", new_group_path %>
       </div>
     </div>
     <div class="header-bottom">
@@ -25,7 +25,9 @@
   </header>
   <main>
     <div class="main-contents">
-      <%= render partial: "/shared/left_contents" %>
+      <div class="left-contents">
+        <%= render partial: "/shared/left_contents" %>
+      </div>
       <div class="right-contents scroll-container">
         <% current_user.groups.each do |group| %>
           <%= link_to group_messages_path(group) do %>
