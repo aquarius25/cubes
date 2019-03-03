@@ -1,1 +1,45 @@
-
+<div class="wrapper">
+  <header>
+    <div class="header-top">
+      <div class="header-top__left">
+        <p class="title">Message</p>
+      </div>
+      <div class="header-top__right">
+      </div>
+    </div>
+    <div class="header-bottom">
+      <%= link_to users_path do %>
+        <i class="fas fa-user-alt icon"></i>
+      <% end %>
+      <%= link_to tweets_path do %>
+        <i class="far fa-comment-dots icon"></i>
+      <% end %>
+      <%= link_to groups_path do %>
+        <i class="far fa-object-group icon color"></i>
+      <% end  %>
+      <%= link_to articles_path do %>
+        <i class="far fa-sticky-note icon"></i>
+      <% end %>
+    </div>
+  </header>
+  <main>
+    <div class="main-contents">
+      <div class="left-contents">
+      </div>
+      <div class="right-contents scroll-container">
+        <div class="tweet-form">
+          <div class="tweet-form__inner">
+            <%= form_for [@group, @message] do |f| %>
+              <%= f.text_field :text, class: "form-input", placeholder: "type a message" %>
+              <%= f.label :image do %>
+                <i class="fas fa-image form-icon"></i>
+                <%= f.file_field :image, calss: "hidden" %>
+              <% end %>
+              <%= f.submit "send" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
