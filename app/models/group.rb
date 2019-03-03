@@ -7,11 +7,7 @@ class Group < ApplicationRecord
 
   def show_last_message
     if (last_message = messages.last).present?
-      if last_message.text?
-        last_message.text
-      else
-        "Have a image."
-      end
+      last_message.text? ? last_message.text : "Have a image."
     else
       "No message yet."
     end
