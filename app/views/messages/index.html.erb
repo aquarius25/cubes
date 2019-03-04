@@ -5,8 +5,9 @@
         <p class="title">Message</p>
       </div>
       <div class="header-top__right">
-        <%= link_to "Back To Group-Top", groups_path %>
-        <%= current_user.name %>
+        <div class="to-group">
+          <%= link_to "BackToGroup", groups_path, class: "b-btn" %>
+        </div>
       </div>
     </div>
     <div class="header-bottom">
@@ -33,15 +34,14 @@
           <% end %>
           <%= group.show_last_message %></br>
         <% end %>
+        <p>ThisGroupMembers:<%= current_user.name %></p>
       </div>
       <div class="right-contents scroll-container tweet-size">
-
         <div class="tweet_contents">
           <% @messages.each do |message| %>
             <%= render partial: "message_contents", locals: { message: message } %>
           <% end %>
         </div>
-
         <div class="tweet-form">
           <div class="tweet-form__inner">
             <%= form_for [@group, @message] do |f| %>
