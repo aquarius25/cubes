@@ -12,8 +12,7 @@
       margin: 10px;
     }
     &--params img {
-      height: 100px;
-      width: 100px;
+      width: 100%;
       border-radius: 10px;
     }
   }
@@ -36,14 +35,14 @@ p.tweet-text {
 }
 .tweet-form {
   height: 80px;
-  width: 100%;
+  width: calc(100% - 300px);
   float: right;
   position: fixed;
   bottom: 0;
   background-color: #597C8B;
   &__inner {
     margin: 15px;
-    padding-left: 30px;
+    float: right;
   }
 }
 .form-input {
@@ -66,6 +65,10 @@ p.tweet-text {
 }
 .form-icon {
   margin: 0;
+  padding: 20px;
+  position: absolute;
+  top: 12px;
+  right: 130px;
   font-size: 23px;
 }
 .sent-tag {
