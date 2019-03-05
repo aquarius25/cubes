@@ -28,10 +28,13 @@
   <main>
     <div class="main-contents">
       <div class="left-contents">
+        <p>Your friends:</p>
         <% @users.each do |user| %>
-          <div class="g-user-name">
-            <%= user.name %>
-          </div>
+          <%= link_to users_path do %>
+            <div class="g-user-name">
+              <%= user.name %>
+            </div>
+          <% end %>
         <% end %>
       </div>
       <div class="right-contents scroll-container">

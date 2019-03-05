@@ -28,13 +28,15 @@
   <main>
     <div class="main-contents">
       <div class="left-contents">
+        <p>- You have groups -</p>
         <% current_user.groups.each do |group| %>
           <%= link_to group_messages_path(group) do %>
             <%= group.name %></br>
           <% end %>
           <%= group.show_last_message %></br>
         <% end %>
-        <p>ThisGroupMembers:<%= current_user.name %></p>
+        <p>- ThisGroupMembers -</p>
+        <%= current_user.name %>
       </div>
       <div class="right-contents scroll-container tweet-size">
         <div class="tweet_contents">
