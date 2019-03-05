@@ -28,7 +28,11 @@
   <main>
     <div class="main-contents">
       <div class="left-contents">
-        <%= render partial: "/shared/left_contents" %>
+        <% @users.each do |user| %>
+          <div class="g-user-name">
+            <%= user.name %>
+          </div>
+        <% end %>
       </div>
       <div class="right-contents scroll-container">
         <% current_user.groups.each do |group| %>
