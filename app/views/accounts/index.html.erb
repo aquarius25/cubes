@@ -6,7 +6,11 @@
       </div>
       <div class="header-top__right">
         <div class="to-group">
-          <%= link_to "AddMyself", new_account_path, class: "n-btn" %>
+          <% if current_user.account %>
+            <%= link_to "AddMyself", "/accounts/#{current_user.id}/edit", class: "n-btn" %>
+          <% else %>
+            <%= link_to "AddMyself", new_account_path, class: "n-btn" %>
+          <% end %>
         </div>
       </div>
     </div>
