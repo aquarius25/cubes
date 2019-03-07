@@ -1,11 +1,21 @@
 <div class="profile">
    <div class="profile-image">
-    <%= image_tag "https://omotesando-info.com/webmagazine/wp-content/uploads/12-3.jpg", alt: "profile-image", class: "user-image" %>
+    <% if current_user.account.present? %>
+      <%= image_tag (current_user.account.image.url), alt: "profile-image", class: "user-image" %>
+      <% else %>
+      <%= image_tag ("no_image.jpg"), class: "user-image" %>
+    <% end %>
   </div>
   <div class="profile-name">
-    <p>LoginName:</p>
-    <p><%= current_user.name %></p>
+    <p>YourName:</p>
     <i class="fas fa-signature"></i>
+    <%= current_user.name %></br>
+    <i class="fab fa-github"></i>
+      <%= link_to "GitHub", "https://github.com/aquarius25" %></br>
+    <i class="fas fa-blog"></i>
+      <%= link_to "Qrunch", "https://aqua25.qrunch.io/logs" %></br>
+    <i class="fab fa-twitter"></i>
+      <%= link_to "Twitter", "https://twitter.com/nafu43333146" %></br>
     <i class="fas fa-edit"></i>
       <%= link_to "LoginEdit", edit_user_registration_path %></br>
     <i class="fas fa-sign-out-alt"></i>

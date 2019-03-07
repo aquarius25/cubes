@@ -66,7 +66,7 @@ gem 'sprockets', '3.7.2'
 gem 'devise'
 gem "carrierwave"
 gem "mini_magick"
-
+gem "pry-byebug"
 
 group :production do
   gem 'unicorn'
