@@ -2,7 +2,7 @@
   <header>
     <div class="header-top">
       <div class="header-top__left">
-        <h1 class="title">Profile</h1>
+        <h1 class="title">NewProfile</h1>
       </div>
       <div class="header-top__right">
       </div>
@@ -11,37 +11,6 @@
     </div>
   </header>
     <main class="devise-main">
-      <%= form_for @account do |f| %>
-
-      <div class="field">
-        <%= f.label :Family_Name %></br>
-        <%= f.text_field :f_name, placeholder: "名字" %></dr>
-      </div>
-
-      <div class="field">
-        <%= f.label :True_Name %></br>
-        <%= f.text_field :t_name, placeholder: "本名" %></dr>
-      </div>
-
-      <div class="field">
-        <%= f.label :Your_Icon %></br>
-        <%= f.file_field :image %></br>
-      </div>
-
-      <div class="field">
-        <%= f.label :Profile %></br>
-        <%= f.text_field :profile, placeholder: "profile" %></dr>
-      </div>
-
-      <div class="field">
-        <%= f.label :Link %></br>
-        <%= f.text_field :link, placeholder: "link" %></dr>
-      </div>
-      Profile_Update
-      <div class="devise-submit">
-        <%= f.submit "Update", class: "devise-login" %>
-      </div>
-
-      <% end %>
+      <%= render partial: "form" %>
     </main>
 </div>
