@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :tweets
   has_many :messages
   has_many :articles
-  mount_uploader :image, ImageUploader
+  has_one :account
 end
