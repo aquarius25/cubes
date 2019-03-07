@@ -5,6 +5,9 @@
         <p class="title">User</p>
       </div>
       <div class="header-top__right">
+        <div class="to-group">
+          <%= link_to "AddMyself", new_account_path, class: "n-btn" %>
+        </div>
       </div>
     </div>
     <div class="header-bottom">
@@ -28,13 +31,29 @@
         <%= render partial: "/shared/left_contents" %>
       </div>
       <div class="right-contents scroll-container">
-        <%= link_to "new", new_account_path %>
-        <% if current_user.account.present? %>
-<!--         <%= image_tag(current_user.account.image.url) %>
- -->        <%= current_user.account.f_name %>
-        <%= current_user.account.t_name %>
-        <%= current_user.account.profile %>
-        <%= link_to "link", current_user.account.link %>
+        <% if current_user.account %>
+          <div class="selfback-image">
+            <p class="self-name">
+              <%= current_user.account.f_name %>
+              <%= current_user.account.t_name %>
+            </p>
+            <div class="background-image" style="background-image: url(http://acusd1.org/High%20School/1516events/Van%20Voorhis%201516/Info%20Pro%2015-16/18%20Braeton/Pictures/My%20Favorite%20Hobby/Slider3.jpg);">
+              <%= image_tag (current_user.account.image.url), class: "self-icon" %>
+            </div>
+          </div>
+          <p>-Profile-</p>
+            <%= current_user.account.profile %>
+            <%= link_to "link", current_user.account.link %>
+        <% else %>
+          <div class="selfback-image">
+            <p class="self-name">
+              No Name
+            </p>
+            <div class="background-image" style="background-image: url(http://acusd1.org/High%20School/1516events/Van%20Voorhis%201516/Info%20Pro%2015-16/18%20Braeton/Pictures/My%20Favorite%20Hobby/Slider3.jpg);">
+              <%= image_tag ("no_image.jpg"), class: "self-icon" %>
+            </div>
+          </div>
+          <p>-Profile-</p>
         <% end %>
       </div>
     </div>

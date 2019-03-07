@@ -3,7 +3,7 @@
     <% if current_user.account.present? %>
       <%= image_tag (current_user.account.image.url), alt: "profile-image", class: "user-image" %>
       <% else %>
-      <%= image_tag ("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrocWot2tcvZduZ13z6KrxJ2YnT-66jHgphq0egIrWAb2Ap-Sm"), alt: "profile-image", class: "user-image" %>
+      <%= image_tag ("no_image.jpg"), class: "user-image" %>
     <% end %>
   </div>
   <div class="profile-name">
