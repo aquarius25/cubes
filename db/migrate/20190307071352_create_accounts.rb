@@ -1,7 +1,7 @@
 class CreateAccounts < ActiveRecord::Migration[5.2]
   def change
     create_table :accounts do |t|
-      t.text :image, null: true
+      t.string :image, null: true
       t.string :f_name, null: true
       t.string :t_name, null: true
       t.text :profile, null: true

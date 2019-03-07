@@ -1,0 +1,52 @@
+<div class="wrapper">
+  <header>
+    <div class="header-top">
+      <div class="header-top__left">
+        <p class="title">User</p>
+      </div>
+      <div class="header-top__right">
+      </div>
+    </div>
+    <div class="header-bottom">
+      <%= link_to users_path do %>
+        <i class="fas fa-user-alt icon color"></i>
+      <% end %>
+      <%= link_to tweets_path do %>
+        <i class="far fa-comment-dots icon"></i>
+      <% end %>
+      <%= link_to groups_path do %>
+        <i class="far fa-object-group icon"></i>
+      <% end  %>
+      <%= link_to articles_path do %>
+        <i class="far fa-sticky-note icon"></i>
+      <% end %>
+    </div>
+  </header>
+  <main>
+    <div class="main-contents">
+      <div class="left-contents">
+        <%= render partial: "/shared/left_contents" %>
+      </div>
+      <div class="right-contents scroll-container">
+        <%= form_for @account do |f| %>
+          <%= f.label :f_name %></br>
+          <%= f.text_field :f_name, placeholder: "fname" %></dr>
+
+          <%= f.label :t_name %></br>
+          <%= f.text_field :t_name, placeholder: "tname" %></dr>
+
+          <%= f.label :yourImage %></br>
+          <%= f.file_field :image %></br>
+
+          <%= f.label :profile %></br>
+          <%= f.text_field :profile, placeholder: "profile" %></dr>
+
+          <%= f.label :link %></br>
+          <%= f.text_field :link, placeholder: "link" %></dr>
+
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </main>
+</div>
