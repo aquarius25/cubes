@@ -1,16 +1,20 @@
 class AccountsController < ApplicationController
 
   def index
+  end
+
+  def new
     @account = Account.new
   end
 
   def create
     @account = Account.new(account_params)
       @account.save
-    redirect_to index: :action
+    redirect_to action: :index
   end
 
   def show
+    @account = Account.find(params[:id])
   end
 
   def edit

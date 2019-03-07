@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="header-bottom">
-      <%= link_to users_path do %>
+      <%= link_to accounts_path do %>
         <i class="fas fa-user-alt icon color"></i>
       <% end %>
       <%= link_to tweets_path do %>
@@ -28,23 +28,13 @@
         <%= render partial: "/shared/left_contents" %>
       </div>
       <div class="right-contents scroll-container">
-        <%= form_for @account do |f| %>
-          <%= f.label :f_name %></br>
-          <%= f.text_field :f_name, placeholder: "fname" %></dr>
-
-          <%= f.label :t_name %></br>
-          <%= f.text_field :t_name, placeholder: "tname" %></dr>
-
-          <%= f.label :yourImage %></br>
-          <%= f.file_field :image %></br>
-
-          <%= f.label :profile %></br>
-          <%= f.text_field :profile, placeholder: "profile" %></dr>
-
-          <%= f.label :link %></br>
-          <%= f.text_field :link, placeholder: "link" %></dr>
-
-          <%= f.submit %>
+        <%= link_to "new", new_account_path %>
+        <% if current_user.account.present? %>
+<!--         <%= image_tag(current_user.account.image.url) %>
+ -->        <%= current_user.account.f_name %>
+        <%= current_user.account.t_name %>
+        <%= current_user.account.profile %>
+        <%= link_to "link", current_user.account.link %>
         <% end %>
       </div>
     </div>
