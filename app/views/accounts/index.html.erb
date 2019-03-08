@@ -45,9 +45,14 @@
               <%= image_tag (current_user.account.image.url), class: "self-icon" %>
             </div>
           </div>
+          <i class="fab fa-github"></i>
+          <%= link_to "GitHub", current_user.account.link %>
+          <i class="fas fa-blog"></i>
+          <%= link_to "TechBlog", current_user.account.link1 %>
+          <i class="fab fa-twitter"></i>
+          <%= link_to "Twitter", current_user.account.link2 %>
           <p>-Profile-</p>
             <%= current_user.account.profile %>
-            <%= link_to "link", current_user.account.link %>
         <% else %>
           <div class="selfback-image">
             <p class="self-name">
