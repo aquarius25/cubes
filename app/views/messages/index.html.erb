@@ -5,12 +5,13 @@
         <p class="title">Message</p>
       </div>
       <div class="header-top__right">
-        <%= link_to "Back To Group-Top", groups_path %>
-        <%= current_user.name %>
+        <div class="to-group">
+          <%= link_to "UpdateGroup", edit_group_path(@group), class: "b-btn" %>
+        </div>
       </div>
     </div>
     <div class="header-bottom">
-      <%= link_to users_path do %>
+      <%= link_to accounts_path do %>
         <i class="fas fa-user-alt icon"></i>
       <% end %>
       <%= link_to tweets_path do %>
@@ -27,21 +28,24 @@
   <main>
     <div class="main-contents">
       <div class="left-contents">
+        <p>- You have groups -</p>
         <% current_user.groups.each do |group| %>
           <%= link_to group_messages_path(group) do %>
             <%= group.name %></br>
           <% end %>
           <%= group.show_last_message %></br>
         <% end %>
+        <p>- ThisGroupMembers -</p>
+        <% @users.each do |user| %>
+          <%= user.name %>
+        <% end %>
       </div>
       <div class="right-contents scroll-container tweet-size">
-
         <div class="tweet_contents">
           <% @messages.each do |message| %>
             <%= render partial: "message_contents", locals: { message: message } %>
           <% end %>
         </div>
-
         <div class="tweet-form">
           <div class="tweet-form__inner">
             <%= form_for [@group, @message] do |f| %>

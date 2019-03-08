@@ -1,13 +1,15 @@
 <div class="profile">
    <div class="profile-image">
-    <%= image_tag "https://omotesando-info.com/webmagazine/wp-content/uploads/12-3.jpg", alt: "profile-image", class: "user-image" %>
+    <% if current_user.account.present? %>
+      <%= image_tag (current_user.account.image.url), alt: "profile-image", class: "user-image" %>
+      <% else %>
+      <%= image_tag ("no_image.jpg"), class: "user-image" %>
+    <% end %>
   </div>
   <div class="profile-name">
-    <p>LoginName:</p>
-    <p><%= current_user.name %></p>
+    <p>YourName:</p>
     <i class="fas fa-signature"></i>
-    <i class="fas fa-edit"></i>
-      <%= link_to "LoginEdit", edit_user_registration_path %></br>
+    <%= current_user.name %></br>
     <i class="fas fa-sign-out-alt"></i>
       <%= link_to "LogOut", destroy_user_session_path, method: :delete %>
   </div>

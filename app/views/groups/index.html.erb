@@ -5,11 +5,13 @@
         <p class="title">Group</p>
       </div>
       <div class="header-top__right">
-        <%= link_to "new", new_group_path %>
+        <div class="to-group">
+          <%= link_to "NewGroup", new_group_path, class: "n-btn" %>
+        </div>
       </div>
     </div>
     <div class="header-bottom">
-      <%= link_to users_path do %>
+      <%= link_to accounts_path do %>
         <i class="fas fa-user-alt icon"></i>
       <% end %>
       <%= link_to tweets_path do %>
@@ -26,13 +28,33 @@
   <main>
     <div class="main-contents">
       <div class="left-contents">
-        <%= render partial: "/shared/left_contents" %>
+        <p>Your friends:</p>
+        <% @users.each do |user| %>
+          <%= link_to account_path(user.id) do %>
+            <div class="g-user-name">
+              <%= user.name %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
       <div class="right-contents scroll-container">
         <% current_user.groups.each do |group| %>
-          <%= link_to group_messages_path(group) do %>
-            <%= group.name %>
-          <% end %>
+          <div class="group-container">
+            <%= link_to group_messages_path(group) do %>
+              <div class="group-image">
+                <%= image_tag "https://cdn1.iconfinder.com/data/icons/user-experience/512/meeting-512.png", class: "group-image__top" %>
+              </div>
+              <div class="group-name">
+                <%= group.name %>
+              </div>
+            <% end %>
+            <div class="group-time">
+              <%= group.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
+            </div>
+            <div class="group-last-message">
+              <%= group.show_last_message %>
+            </div>
+          </div>
         <% end %>
       </div>
     </div>
