@@ -2,4 +2,21 @@
   height: 300px;
   width: 300px;
   word-break: normal;
+  line-height: 25px;
+  letter-spacing: 0.1px;
+}
+.profile-links {
+  height: 100%;
+  width: 92%;
+  margin: 0 38px;
+}
+.links {
+  margin-right: 10px;
+}
+.account-profile {
+  height: 100%;
+  width: 92%;
+  margin: 0 38px;
+  word-break: normal;
+  white-space: pre-line;
 }
