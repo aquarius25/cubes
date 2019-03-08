@@ -30,7 +30,7 @@
       <div class="left-contents">
         <p>Your friends:</p>
         <% @users.each do |user| %>
-          <%= link_to accounts_path do %>
+          <%= link_to account_path(user.id) do %>
             <div class="g-user-name">
               <%= user.name %>
             </div>
