@@ -6,7 +6,7 @@
       </div>
       <div class="header-top__right">
         <div class="to-group">
-          <%= link_to "BackToGroup", groups_path, class: "b-btn" %>
+          <%= link_to "UpdateGroup", edit_group_path(@group), class: "b-btn" %>
         </div>
       </div>
     </div>
@@ -36,7 +36,9 @@
           <%= group.show_last_message %></br>
         <% end %>
         <p>- ThisGroupMembers -</p>
-        <%= current_user.name %>
+        <% @users.each do |user| %>
+          <%= user.name %>
+        <% end %>
       </div>
       <div class="right-contents scroll-container tweet-size">
         <div class="tweet_contents">
