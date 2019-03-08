@@ -10,14 +10,6 @@
     <p>YourName:</p>
     <i class="fas fa-signature"></i>
     <%= current_user.name %></br>
-    <i class="fab fa-github"></i>
-      <%= link_to "GitHub", "https://github.com/aquarius25" %></br>
-    <i class="fas fa-blog"></i>
-      <%= link_to "Qrunch", "https://aqua25.qrunch.io/logs" %></br>
-    <i class="fab fa-twitter"></i>
-      <%= link_to "Twitter", "https://twitter.com/nafu43333146" %></br>
-    <i class="fas fa-edit"></i>
-      <%= link_to "LoginEdit", edit_user_registration_path %></br>
     <i class="fas fa-sign-out-alt"></i>
       <%= link_to "LogOut", destroy_user_session_path, method: :delete %>
   </div>

@@ -29,7 +29,7 @@ class AccountsController < ApplicationController
 
   private
   def account_params
-    params.require(:account).permit(:image, :f_name, :t_name, :profile, :link).merge(user_id: current_user.id)
+    params.require(:account).permit(:image, :f_name, :t_name, :profile, :link, :link1, :link2).merge(user_id: current_user.id)
   end
 
   def set_account
