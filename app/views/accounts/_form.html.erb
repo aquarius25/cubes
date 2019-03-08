@@ -17,13 +17,24 @@
 
       <div class="field">
         <%= f.label :Profile %></br>
-        <%= f.text_field :profile, placeholder: "profile" %></dr>
+        <%= f.text_area :profile, placeholder: "profile", class: "text" %></dr>
       </div>
 
       <div class="field">
-        <%= f.label :Link %></br>
-        <%= f.text_field :link, placeholder: "link" %></dr>
+        <%= f.label :GitHub %></br>
+        <%= f.text_field :link, placeholder: "GitHub-Link" %></dr>
       </div>
+
+      <div class="field">
+        <%= f.label :Blog %></br>
+        <%= f.text_field :link1, placeholder: "TechBlog-Link" %></dr>
+      </div>
+
+      <div class="field">
+        <%= f.label :Twitter %></br>
+        <%= f.text_field :link2, placeholder: "Twitter-Link" %></dr>
+      </div>
+
       Profile_Update
       <div class="devise-submit">
         <%= f.submit "Update", class: "devise-login" %>
