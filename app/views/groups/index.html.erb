@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="header-bottom">
-      <%= link_to users_path do %>
+      <%= link_to accounts_path do %>
         <i class="fas fa-user-alt icon"></i>
       <% end %>
       <%= link_to tweets_path do %>
@@ -28,14 +28,21 @@
   <main>
     <div class="main-contents">
       <div class="left-contents">
-        <%= render partial: "/shared/left_contents" %>
+        <p>Your friends:</p>
+        <% @users.each do |user| %>
+          <%= link_to account_path(user.id) do %>
+            <div class="g-user-name">
+              <%= user.name %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
       <div class="right-contents scroll-container">
         <% current_user.groups.each do |group| %>
           <div class="group-container">
             <%= link_to group_messages_path(group) do %>
               <div class="group-image">
-                <%= image_tag "https://s3-ap-northeast-1.amazonaws.com/killy-image/linestamp/f1/f11c/f11c6235149fdb704aea9631d8347a9c619158d0", class: "group-image__top" %>
+                <%= image_tag "https://cdn1.iconfinder.com/data/icons/user-experience/512/meeting-512.png", class: "group-image__top" %>
               </div>
               <div class="group-name">
                 <%= group.name %>
