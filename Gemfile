@@ -67,16 +67,4 @@ gem 'devise'
 gem "carrierwave"
 gem "mini_magick"
 gem "pry-byebug"
-gem 'unicorn-worker-killer'
 
-group :production do
-  gem 'unicorn', '5.4.1'
-end
-
-group :development, :test do
-  gem 'capistrano'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano3-unicorn'
-end
