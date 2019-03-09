@@ -67,6 +67,7 @@ gem 'devise'
 gem "carrierwave"
 gem "mini_magick"
 gem "pry-byebug"
+gem 'unicorn-worker-killer'
 
 group :production do
   gem 'unicorn', '5.4.1'
